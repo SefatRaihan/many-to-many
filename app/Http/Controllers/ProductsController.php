@@ -29,7 +29,7 @@ class ProductsController extends Controller
             'product_image' => 'required|mimes:jpeg,jpg,png,svg,gif|max:2048'
         ]);
 
-        $product = Product::create($request->all());
+        
 
         if ($image = $request->file('product_image')) {
             $destinationPath = 'images/upload/';
@@ -38,7 +38,10 @@ class ProductsController extends Controller
         } else {
             unset($profileImage);
         }
-
+        $datas =$request->all();
+        $datas['product_image] = $productImage;
+        $product = Product::create($datas);
+        
         $category = $request->category_name;
         $product->categories()->attach($category);
         return Redirect()->route('product-index')->with('success', 'Product uploaded successfully');
