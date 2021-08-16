@@ -39,7 +39,7 @@ class ProductsController extends Controller
             unset($profileImage);
         }
         $datas =$request->all();
-        $datas['product_image] = $productImage;
+        $datas['product_image'] = $productImage;
         $product = Product::create($datas);
         
         $category = $request->category_name;
