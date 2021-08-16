@@ -1,3 +1,23 @@
+@php
+    function findCategory($seleced_prodcuts ,$category){
+        foreach ($seleced_prodcuts as $seleced_prodcut){
+            if($seleced_prodcut == $category){
+                return true;
+            }
+        }
+        return false;
+    }
+@endphp@php
+    function findCategory($seleced_prodcuts ,$category){
+        foreach ($seleced_prodcuts as $seleced_prodcut){
+            if($seleced_prodcut == $category){
+                return true;
+            }
+        }
+        return false;
+    }
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,12 +65,14 @@
                 
                 <div class="form-group mb-3">
                     <label for="category_name" class="form-lavel">Category Name :</label>
-                    <select name="category_name" id="">
+                     <select name="category_name">
+                        
                         @foreach($categories as $category)
-                        <option value="{{$category->id}}">
+                        <option value="{{ $category->id }}" {{findCategory($seleced_prodcuts, $category->id) ? 'selected' : ''}}>                      
                             {{$category->category_name}}
                         </option>
                         @endforeach
+                        
                     </select>
                     @error('category_name')
                     <span class="text-danger">{{$message}}</span>
