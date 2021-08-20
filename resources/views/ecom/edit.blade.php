@@ -7,15 +7,6 @@
         }
         return false;
     }
-@endphp@php
-    function findCategory($seleced_prodcuts ,$category){
-        foreach ($seleced_prodcuts as $seleced_prodcut){
-            if($seleced_prodcut == $category){
-                return true;
-            }
-        }
-        return false;
-    }
 @endphp
 
 <!DOCTYPE html>
