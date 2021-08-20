@@ -1,6 +1,6 @@
 @php
-    function findCategory($seleced_prodcuts ,$category){
-        foreach ($seleced_prodcuts as $selected_prodcut){
+    function findCategory($selected_prodcuts ,$category){
+        foreach ($selected_prodcuts as $selected_prodcut){
             if($selected_prodcut == $category){
                 return true;
             }
