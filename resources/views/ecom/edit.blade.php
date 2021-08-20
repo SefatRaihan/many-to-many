@@ -1,7 +1,7 @@
 @php
     function findCategory($seleced_prodcuts ,$category){
-        foreach ($seleced_prodcuts as $seleced_prodcut){
-            if($seleced_prodcut == $category){
+        foreach ($seleced_prodcuts as $selected_prodcut){
+            if($selected_prodcut == $category){
                 return true;
             }
         }
@@ -59,7 +59,7 @@
                      <select name="category_name">
                         
                         @foreach($categories as $category)
-                        <option value="{{ $category->id }}" {{findCategory($seleced_prodcut, $category->id) ? 'selected' : ''}}>                      
+                        <option value="{{ $category->id }}" {{findCategory($selected_prodcut, $category->id) ? 'selected' : ''}}>                      
                             {{$category->category_name}}
                         </option>
                         @endforeach
