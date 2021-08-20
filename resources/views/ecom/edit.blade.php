@@ -59,7 +59,7 @@
                      <select name="category_name">
                         
                         @foreach($categories as $category)
-                        <option value="{{ $category->id }}" {{findCategory($seleced_prodcuts, $category->id) ? 'selected' : ''}}>                      
+                        <option value="{{ $category->id }}" {{findCategory($seleced_prodcut, $category->id) ? 'selected' : ''}}>                      
                             {{$category->category_name}}
                         </option>
                         @endforeach
