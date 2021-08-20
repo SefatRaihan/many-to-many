@@ -51,7 +51,7 @@ class ProductsController extends Controller
     {
         $product = Product::findOrFail($product_id);
         $categories = Category::all();
-        $selecetd_prodcut = $product->categories->pluck('id')->toArray();
+        $selected_prodcut = $product->categories->pluck('id')->toArray();
         return view('ecom.edit', compact('product', 'categories', 'selected_prodcut'));
     }
 
